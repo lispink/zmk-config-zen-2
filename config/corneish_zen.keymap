@@ -38,7 +38,7 @@
    &trans  &kp N1 &kp N2   &kp N3    &kp N4    &kp N5    &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &trans
    &kp DEL &none  &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp LEFT &kp DOWN &kp UP &kp RIGHT &none  &none
    &trans  &none  &none    &none     &none     &none     &none    &none    &none  &none     &none  &trans
-                                  &trans &trans &trans   &trans &mo 3 &trans
+                                  &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
@@ -53,7 +53,7 @@
    &kp TILDE &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS &kp STAR &kp UNDER &kp EQUAL &trans
    &kp DEL   &kp LBKT &kp LPAR &kp LBRC &kp LT   &kp MINUS   &kp PLUS  &kp GT   &kp RBRC &kp RPAR  &kp RBKT  &kp GRAVE
    &trans    &kp PIPE &none    &none    &none    &none       &none     &none    &kp LBRC &kp RBRC  &kp BSLH  &trans
-                                       &trans &mo 3 &trans   &trans &trans &trans
+                                       &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
@@ -70,6 +70,16 @@
    &trans     &none        &none        &none        &none        &none     &none   &none  &none  &none  &none  &trans
                                                     &trans &trans &trans    &trans &trans &trans
                         >;
+                };
+        };
+};
+
+/{
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                tri_layer {
+                        if-layers = <1 2>;
+                        then-layer = <3>;
                 };
         };
 };
